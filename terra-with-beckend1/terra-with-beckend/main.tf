@@ -14,7 +14,7 @@ resource "aws_instance" "nitin" {
 
 resource "aws_dynamodb_table" "terraform_lock" {
   name           = "terraform-lock"
-  billing_mode   = "PAY_PER_REQUEST"
+  billing_mode   = "PAY_PER_REQUEST" # charchage per every request
   hash_key       = "LockID"
 
   attribute {
