@@ -11,3 +11,14 @@ resource "aws_instance" "nitin" {
     subnet_id = "subnet-03f3cd32b85ade149"
 
 }
+
+resource "aws_dynamodb_table" "terraform_lock" {
+  name           = "terraform-lock"
+  billing_mode   = "PAY_PER_REQUEST"
+  hash_key       = "LockID"
+
+  attribute {
+    name = "LockID"
+    type = "S"
+  }
+}
